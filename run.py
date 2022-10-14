@@ -1,41 +1,45 @@
-from replit import clear
 import random
 from hangman_movies import movies_list
 from hangman_stages import stages
 
 """
-variable to choose a random movie from movies list
-"""
-movie = random.choice(movies_list)
-print(movie)
+choose a random movie from movies list
 
+set player lives to 6
+
+number of letters in movie name
+
+set initial game over state to false
+
+"""
+
+movie = random.choice(movies_list).upper()
 player_lives = 6
+movie_length = len(movie)
+game_over = False
 
 """
-display "_" for movie
+display "_" for movie name
 """
 
 display_movie = []
-movie_length = len(movie)
+
 for letter in range(movie_length):
-    if letter == "":
+    if letter == " ":
         continue
     else:
         display_movie += "_"
-print(display_movie)
 
 """
 ask player to guess a letter
 
 check if guessed letter is in the movie
 """
-game_over = False
+
 
 while not game_over:
-    guessed_letter = input("Please guess a letter\n").lower()
+    guessed_letter = input("Please guess a letter\n").upper()
     print(guessed_letter)
-
-    clear()
 
     if guessed_letter in display_movie:
         print(f"You have aleady guessed the letter {guessed_letter}")
@@ -44,6 +48,7 @@ while not game_over:
         letter = movie[p]
         if letter == guessed_letter:
             display_movie[p] = letter
+            print("You guessed a correct letter!")
             
     print(display_movie)
 
