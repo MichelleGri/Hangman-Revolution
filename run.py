@@ -11,7 +11,14 @@ print(secret_movie)
 """
 ask player to guess a letter
 """
-guessed_letter = input("Please guess a letter!\n").lower()
+guessed_letter = input("Please guess a letter\n").lower()
 print(guessed_letter)
 
-s
+"""
+check if guessed letter is in the secret movie
+"""
+for letter in secret_movie:
+    if letter == guessed_letter:
+        print("You have guessed the correct letter!")
+    else:
+        print(f"The letter {guessed_letter} is not in the secret movie!")
