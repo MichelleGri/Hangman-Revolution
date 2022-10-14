@@ -3,90 +3,76 @@ from hangman_movies import movies_list
 from hangman_stages import stages
 
 
-def main():
-    """
-    main function to set initial values
-    """
-    print("Let's play Hangman!")
-    game_over = False
-    player_lives = 6
-    guessed_letters = []
-    print(stages[player_lives])
-
-    random_movie()
-    display_movie()
-    guess_letter()
-    check_guess()
-
-
 def random_movie():
     """
     function to choose a random movie from list
+
+    display underscores for number of letters in movie
     """
     movie = random.choice(movies_list)
     return movie.upper()
 
 
-def display_movie(movie):
+def play_game(movie):
     """
-    function to display "_" for movie name
+    function to play game
+    ask player to guess a letter
     """
+    print("Let's play Hangman!")
+    player_lives = 6
+    print(stages[player_lives])
+    game_over = False
+    guessed_letters = []
     display = []
+    movie_length = len(movie)
 
     for letter in movie:
-        print(letter)
         if letter == " ":
             display += " "
         else:
             display += "_"
-    return display
+    print(' '.join(display))
+
+    while not game_over and player_lives > 0:
+        guess = input("Please guess a letter:\n").upper().strip()
+
+        if len(guess) == 1 and guess.isalpha():
+            if guess in guessed_letters:
+                print(f"You have aleady guessed the letter {guess}")
+
+            elif guess not in movie:
+                print(f"The letter {guess} is not in this movie!")
+                player_lives -= 1
+                guessed_letters.append(guess)
         
+            else:
+                for position in range(movie_length):
+                    letter = movie[position]
+                    if letter == guess:
+                        display[position] = letter
+                print(f"{' '.join(display)}")
+                print(f"Well done! {guess} is in the movie!")
+        
+                if player_lives == 0:
+                    game_over = True
+                    print("You lost the game!")
 
-def guess_letter():
-    """
-    ask player to guess a letter
-    """
-    guess = input("Please guess a letter\n").upper()
-    guess += guessed_letters
-    return guess
-    
-
-def check_guess(guess, movie):
-    """
-    function to check guess
-    """
-    if len(guess) == 1 and guess.isalpha():
-        if guess in display:
-            print(f"You have aleady guessed the letter {guess}")
-
-        for p in range(len(movie)):
-            letter = movie[p]
-            if letter == guess:
-                display[p] = letter
-                print("You guessed a correct letter!")
+                if "_" not in display:
+                    game_over = True
+                    print("Congratulations! You guessed the correct movie!")
             
-        print(display)
+            print(stages[player_lives])
 
-        if guess not in movie:
-            player_lives -= 1
-            print(f"The letter {guess} is not in this movie, you lose a life!")
-            if player_lives == 0:
-                game_over = True
-                print("You lost the game!")
-
-        if "_" not in display:
-            game_over = True
-            print("Congratulations! You guessed the correct movie!")
-
-        print(stages[player_lives])
-
-    else:
-        print("Invalid guess, please enter letters from A-Z only!")
+        else:
+            print("Invalid guess, please enter letters from A-Z only!")
 
 
-while not game_over:
-    guess_letter()
-    check_guess()
-    
+def main():
+    """
+    main function to set initial values
+    """
+    movie = random_movie()
+    play_game(movie)
 
-    
+
+main()
