@@ -1,5 +1,7 @@
+from replit import clear
 import random
 from hangman_movies import movies_list
+from hangman_stages import stages
 
 """
 variable to choose a random movie from movies list
@@ -33,6 +35,11 @@ while not game_over:
     guessed_letter = input("Please guess a letter\n").lower()
     print(guessed_letter)
 
+    clear()
+
+    if guessed_letter in display_movie:
+        print(f"You have aleady guessed the letter {guessed_letter}")
+
     for p in range(movie_length):
         letter = movie[p]
         if letter == guessed_letter:
@@ -51,5 +58,5 @@ while not game_over:
         game_over = True
         print("Congratulations! You guessed the correct movie!")
 
-    print(hangman_stages[player_lives])
+    print(stages[player_lives])
 

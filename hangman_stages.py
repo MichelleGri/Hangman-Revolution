@@ -2,7 +2,7 @@
 ascii art for hangman
 """
 
-hangman_stages = ['''
+stages = ['''
   +---+
   |   |
   O   |
