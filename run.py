@@ -2,9 +2,8 @@ import random
 from hangman_movies import movies_list
 from hangman_stages import stages
 
-"""
-choose a random movie from list
 
+"""
 set player lives to 6
 
 number of letters in movie name
@@ -12,23 +11,32 @@ number of letters in movie name
 set initial game over state to false
 """
 
-movie = random.choice(movies_list).upper()
 player_lives = 6
-movie_length = len(movie)
 game_over = False
 
 
-"""
-display "_" for movie name
-"""
+def random_movie():
+    """
+    function to choose a random movie from list
+    """
+    movie = random.choice(movies_list)
+    return movie.upper()
 
-display_movie = []
 
-for letter in range(movie_length):
-    if letter == " ":
-        display_movie += " "
-    else:
-        display_movie += "_"
+def display_movie(movie):
+    """
+    function to display "_" for movie name
+    """
+    display = []
+
+    for letter in movie:
+        print(letter)
+        if letter == " ":
+            display += " "
+        else:
+            display += "_"
+    return display
+        
 
 """
 ask player to guess a letter
@@ -41,16 +49,16 @@ while not game_over:
 
     if len(guess) == 1 and guess.isalpha():
 
-        if guess in display_movie:
+        if guess in display:
             print(f"You have aleady guessed the letter {guess}")
 
-        for p in range(movie_length):
+        for p in range(len(movie)):
             letter = movie[p]
             if letter == guess:
-                display_movie[p] = letter
+                display[p] = letter
                 print("You guessed a correct letter!")
             
-        print(display_movie)
+        print(display)
 
         if guess not in movie:
             player_lives -= 1
@@ -59,13 +67,12 @@ while not game_over:
                 game_over = True
                 print("You lost the game!")
 
-        if "_" not in display_movie:
+        if "_" not in display:
             game_over = True
             print("Congratulations! You guessed the correct movie!")
 
-    else:
-        ("Invalid guess, please guess letters from A-Z only!")
-
         print(stages[player_lives])
-    
+
+    else:
+        print("Invalid guess, please enter letters from A-Z only!")
 
