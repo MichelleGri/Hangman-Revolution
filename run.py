@@ -3,16 +3,20 @@ from hangman_movies import movies_list
 from hangman_stages import stages
 
 
-"""
-set player lives to 6
+def main():
+    """
+    main function to set initial values
+    """
+    print("Let's play Hangman!")
+    game_over = False
+    player_lives = 6
+    guessed_letters = []
+    print(stages[player_lives])
 
-number of letters in movie name
-
-set initial game over state to false
-"""
-
-player_lives = 6
-game_over = False
+    random_movie()
+    display_movie()
+    guess_letter()
+    check_guess()
 
 
 def random_movie():
@@ -38,17 +42,20 @@ def display_movie(movie):
     return display
         
 
-"""
-ask player to guess a letter
-
-check if guessed letter is in the movie
-"""
-
-while not game_over:
+def guess_letter():
+    """
+    ask player to guess a letter
+    """
     guess = input("Please guess a letter\n").upper()
+    guess += guessed_letters
+    return guess
+    
 
+def check_guess(guess, movie):
+    """
+    function to check guess
+    """
     if len(guess) == 1 and guess.isalpha():
-
         if guess in display:
             print(f"You have aleady guessed the letter {guess}")
 
@@ -76,3 +83,10 @@ while not game_over:
     else:
         print("Invalid guess, please enter letters from A-Z only!")
 
+
+while not game_over:
+    guess_letter()
+    check_guess()
+    
+
+    
