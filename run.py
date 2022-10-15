@@ -2,6 +2,7 @@ import random
 import sys
 from hangman_movies import movies_list
 from hangman_stages import stages
+from hangman_logo import logo
 
 
 def random_movie():
@@ -19,6 +20,7 @@ def play_game(movie):
     function to play game
     ask player to guess a letter
     """
+    print(logo)
     print("Let's play Hangman!")
     player_lives = 6
     print(stages[player_lives])
