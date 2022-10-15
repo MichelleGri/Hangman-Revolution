@@ -61,13 +61,13 @@ def play_game(movie):
         if letter == " ":
             display += " "
         else:
-            display += "_"
+            display += "  _"
     print(' '.join(display))
     print("\n")
 
     while not game_over and player_lives > 0:
         guess = input("  Please guess a letter:\n\n").upper().strip()
-        print("\n")
+        print("  \n")
 
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
@@ -120,16 +120,16 @@ def restart_game():
     game_over = True
     while game_over:
         play_again = input("Do you want to play again? Y/N:\n").upper().strip()
-        print("\n")
+        print("  \n")
         while play_again == "Y":
             main()
         if play_again == "N":
-            print("Thank you for playing Hangman Revolution!")
+            print("  Thank you for playing Hangman Revolution!")
             print("\n")
             sys.exit()
         else:
-            print("Invalid input ... enter Y to play again or N to exit")
-            print("\n")
+            print("  Invalid input ... enter Y to play again or N to exit")
+            print("  \n")
 
 
 def main():
