@@ -84,7 +84,6 @@ def play_game(movie):
                 player_lives -= 1
                 guessed_letters += guess
                 print(' '.join(display))
-                print("\n")
             else:
                 for position in range(movie_length):
                     letter = movie[position]
@@ -101,7 +100,8 @@ def play_game(movie):
                     game_over = True
                     print(LOGO)
                     print("  Congratulations! You guessed the correct movie!")
-                    print(movie)
+                    print("\n")
+                    print(f"  {movie}")
                     print("\n")
             if player_lives == 0:
                 game_over = True
