@@ -49,7 +49,7 @@ def play_game(movie):
                     if number of lives is 0 - game is lost
     """
     print(LOGO)
-    print("Let's play Hangman!")
+    print("  Let's play Hangman!")
     player_lives = 6
     print(stages[player_lives])
     game_over = False
@@ -66,17 +66,17 @@ def play_game(movie):
     print("\n")
 
     while not game_over and player_lives > 0:
-        guess = input("Please guess a letter:\n\n").upper().strip()
+        guess = input("  Please guess a letter:\n\n").upper().strip()
         print("\n")
 
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print(f"You already guessed {guess}, guess another letter!")
+                print(f"  You already guessed {guess}, guess another letter!")
                 print("\n")
                 print(' '.join(display))
 
             elif guess not in movie:
-                print(f"The letter {guess} is not in this movie!")
+                print(f"  The letter {guess} is not in this movie!")
                 print("\n")
                 player_lives -= 1
                 guessed_letters += guess
@@ -88,23 +88,23 @@ def play_game(movie):
                     if letter == guess:
                         display[position] = letter
                 print("\n")
-                print(f"Well done! {guess} is in the movie!")
+                print(f"  Well done! The letter {guess} is in the movie!")
                 print("\n")
                 print(' '.join(display))
                 guessed_letters += guess
 
                 if "_" not in display:
                     game_over = True
-                    print("Congratulations! You guessed the correct movie!")
+                    print("  Congratulations! You guessed the correct movie!")
                     print("\n")
             if player_lives == 0:
                 game_over = True
-                print(f"You lost the game!\n\nThe movie was {movie}!")
+                print(f"  You lost the game!\n\nThe movie was {movie}!")
                 print("\n")
             print(stages[player_lives])
 
         else:
-            print("Invalid guess, please enter one letter from A to Z only!")
+            print("  Invalid guess, please enter one letter from A to Z only!")
             print("\n")
 
 
