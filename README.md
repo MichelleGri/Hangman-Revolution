@@ -17,7 +17,7 @@ The target audience for this game are people from 18 years and over who have an 
 * [User Experience (UX)](#user-experience)
 * [Scope](#scope)
 * [Flow Chart](#flow-chart)
-* [Features](#features)
+* [Features and Design](#features-and-design)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
 * [Deployment](#deployment)
@@ -63,7 +63,7 @@ A flow chart was created using Lucidchart to explain the game flow and logic:
 
 ***
 
-## Features
+## Features and Design
 
 ### Logo
 
@@ -79,7 +79,7 @@ To maintain simplicity, the welcome message displays "Let's play Hangman!"
 
 ### Game area
 
-The game area includes a drawing of hangman with ASCII art, which will be updated as the player loses lives. 
+The game area includes a drawing of hangman with ASCII art, which is updated as the player loses lives. 
 
 The movie title is represented with empty underscores / dashes. These will be updated as the player guesses correct letters corresponding to their position in the movie title. 
 
@@ -121,11 +121,17 @@ The game ends once the player guesses the correct movie title, and the game is w
 
 The game ends if the player enters 6 incorrect guesses, and the game is lost.
 
+![Play Again](images/play-again.PNG)
+
 The player is asked if they would like to play again with displaying the following message: "Do you want to play again? Y/N:"
 
 If the player enters "Y", the game restarts with a different random movie.
 
+![Thank you for playing](images/thank-you.PNG)
+
 If the player enters "N", the following message is displayed: "Thank you for playing Hangman Revolution!"
+
+![Invalid Input](images/invalid-input.PNG)
 
 If the player enters an invalid response, the following message is displayed: "Invalid input ... enter Y to play again or N to exit"
 
