@@ -61,7 +61,7 @@ def play_game(movie):
         if letter == " ":
             display += " "
         else:
-            display += "  _"
+            display += "_"
     print(' '.join(display))
     print("\n")
 
@@ -71,12 +71,14 @@ def play_game(movie):
 
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print(f"  You already guessed {guess}, guess another letter!")
+                print(LOGO)
+                print(f"  You already guessed the letter {guess},\n guess another letter!")
                 print("\n")
                 print(' '.join(display))
 
             elif guess not in movie:
-                print(f"  The letter {guess} is not in this movie!")
+                print(LOGO)
+                print(f"  Well done! The letter {guess} is not in this movie!")
                 print("\n")
                 player_lives -= 1
                 guessed_letters += guess
@@ -88,6 +90,7 @@ def play_game(movie):
                     if letter == guess:
                         display[position] = letter
                 print("\n")
+                print(LOGO)
                 print(f"  Well done! The letter {guess} is in the movie!")
                 print("\n")
                 print(' '.join(display))
@@ -95,15 +98,18 @@ def play_game(movie):
 
                 if "_" not in display:
                     game_over = True
+                    print(LOGO)
                     print("  Congratulations! You guessed the correct movie!")
                     print("\n")
             if player_lives == 0:
                 game_over = True
+                print(LOGO)
                 print(f"  You lost the game!\n\nThe movie was {movie}!")
                 print("\n")
             print(stages[player_lives])
 
         else:
+            print(LOGO)
             print("  Invalid guess, please enter one letter from A to Z only!")
             print("\n")
 
