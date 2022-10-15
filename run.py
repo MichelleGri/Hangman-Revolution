@@ -2,7 +2,7 @@ import random
 import sys
 from hangman_movies import movies_list
 from hangman_stages import stages
-from hangman_logo import logo
+from hangman_logo import LOGO
 
 
 def random_movie():
@@ -44,7 +44,7 @@ def play_game(movie):
                     if there are no more underscores in display - game is won
                     if number of lives is 0 - game is lost
     """
-    print(logo)
+    print(LOGO)
     print("Let's play Hangman!")
     player_lives = 6
     print(stages[player_lives])
@@ -105,13 +105,27 @@ def play_game(movie):
 
 
 def restart_game():
-    play_again = input(f"Do you want to play again? Y/N:\n").upper().strip()
-    print("\n")
-    while play_again == "Y":
-        main()
-    if play_again == "N":
-        print("Thank you for playing!")
-        sys.exit()
+    """
+    funtion to restart game
+
+    ask player is they want to play again
+        if yes - while loop to start game, continues until player enters N
+        if no - exit system
+        validation - if input is not Y or N, ask player to enter valid input
+    """
+    game_over = True
+    while game_over:
+        play_again = input("Do you want to play again? Y/N:\n").upper().strip()
+        print("\n")
+        
+        while play_again == "Y":
+            main()
+        if play_again == "N":
+            print("Thank you for playing Hangman Revolution!")
+            sys.exit()
+        else:
+            print("Invalid input ...Please enter Y to play again or N to exit")
+            print("\n")
 
 
 def main():

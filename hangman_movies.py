@@ -1,3 +1,7 @@
+"""
+list of movies to choose randomly to play game
+"""
+
 movies_list = [
     "Harry Potter",
     "The Lord of the Rings",
