@@ -8,6 +8,8 @@ The Hangman Revolution is the classic hangman game based on movie titles. The ga
 
 The target audience for this game are people from 18 years and over who have an interest in movies and playing simple and classic games. It challenges and tests the players' knowledge of movie titles. 
 
+![Hangman Revolution](images/hangman-revolution.PNG)
+
 ***
 
 ## Index - Table of Contents
@@ -167,6 +169,28 @@ The project has been deployed to Heroku: [The Hangman Revolution](https://hangma
 11. First add "Python", click on 'Save'.
 12. Second add "Nodejs", click 'Save'.
     (Ensure 'Python' is before (first) 'Nodejs' (second) - drag and rearrange if required)
+13. Navigate to 'Deploy' tab.
+14. Select 'GitHub' from 'Deployment method'
+15. Click on 'Connect to GitHub'
+16. Search for the GitHub repository name, and click on 'Connect'
+17. Click on 'Deploy Branch'
+18. Click on 'View' - this will open a new tab with the deployed app / project
+
+### Enable automatic deployment to Heroku
+Follow the steps below to enable automatic deployment to Heroku from Gitpod:
+
+Open the terminal.
+command: heroku login -i
+Enter your credentials - email and password
+Get your app name from heroku.
+command: heroku apps
+Set the heroku remote. (Replace <app_name> with your actual app name and remove the <> characters)
+command: heroku git:remote -a <app_name>
+Add and commit any changes to your code if applicable
+command: git add . && git commit -m "Deploy to Heroku via CLI"
+Push to both GitHub and Heroku
+command: git push origin main
+command: git push heroku main
 
 ***
 
