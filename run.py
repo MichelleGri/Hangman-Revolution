@@ -69,22 +69,25 @@ def play_game(movie):
             if guess in guessed_letters:
                 print(f"You have aleady guessed the letter {guess},\n\nplease guess a different letter!")
                 print("\n")
-
+                print(' '.join(display))
+        
             elif guess not in movie:
                 print(f"The letter {guess} is not in this movie!")
                 print("\n")
                 player_lives -= 1
                 guessed_letters += guess
+                print(' '.join(display))
+                print("\n")
             
             else:
                 for position in range(movie_length):
                     letter = movie[position]
                     if letter == guess:
                         display[position] = letter
-                print(f"{' '.join(display)}")
                 print("\n")
                 print(f"Well done! {guess} is in the movie!")
                 print("\n")
+                print(' '.join(display))
                 guessed_letters += guess
 
                 if "_" not in display:
@@ -122,6 +125,7 @@ def restart_game():
             main()
         if play_again == "N":
             print("Thank you for playing Hangman Revolution!")
+            print("\n")
             sys.exit()
         else:
             print("Invalid input ...Please enter Y to play again or N to exit")
