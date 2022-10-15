@@ -41,7 +41,7 @@ def play_game(movie):
                     if already guessed - ask player to guess a different letter
 
             Game play:
-                check if guessed letter is in movie name
+                check if guessed letter is in movie title
                     if yes - replace underscore with guessed letter
                     if no - guess is wrong, decrease lives, draw hangman
                 check if game over

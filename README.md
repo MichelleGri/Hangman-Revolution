@@ -4,9 +4,9 @@
 
 [GitHub Repo](https://github.com/MichelleGri/hangman-revolution)
 
-The Hangman Revolution is the classic hangman game based on movie titles. The game aims to create an engaging and entertaining environment for the player to enjoy themselves. It is coded with Python and is played on terminal on Heroku. The game asks the player to enter letters from A to Z and try to guess the movie title. 
+Hangman Revolution is a classic hangman game based on movies. The game aims to create an engaging and entertaining environment for the players. It is coded with Python and is played on the terminal on Heroku. The aim of the game is to guess the hidden movie title before 6 lives run out and the hangman drawing is completed.
 
-The target audience for this game are people from 18 years and over who have an interest in movies and playing simple and classic games. It challenges and tests the players' knowledge of movie titles. 
+The target audience for this game are people from 18 years and over who have an interest in movies and playing simple classic games. It challenges and tests the players' knowledge of popular movies. 
 
 ![Hangman Revolution](images/hangman-revolution.PNG)
 
@@ -15,13 +15,12 @@ The target audience for this game are people from 18 years and over who have an 
 ## Index - Table of Contents
 
 * [User Experience (UX)](#user-experience)
+* [Scope](#scope)
 * [Flow Chart](#flow-chart)
-* [Designs](#designs)
 * [Features](#features)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
 * [Deployment](#deployment)
-* [Known Bugs](#known-bugs)
 * [Acknowledgements](#credit)
 
 ***
@@ -33,10 +32,10 @@ The target audience for this game are people from 18 years and over who have an 
 #### Reasons to play the game
 
 * A user looking for a simple and classic game to play.
-* A user wanting to play a game based on movie titles.
+* A user wanting to play a game based on movies.
 * A user looking for entertainment and enjoyment.
 
-#### Aims of the game
+#### Aim of the game
 
 * Provide an entertaining and engaging game for players
 
@@ -49,7 +48,7 @@ The target audience for this game are people from 18 years and over who have an 
 * Being able to easily understand how to play the game
 * Have an entertaining experience
 
-#### As a developer / business, I want to provide
+#### As a developer, I want to provide
 * A simple and easy to play game with all game functionality working as expected
 * Simple and easy to follow instructions
 * Entertain and engage the player
@@ -70,9 +69,13 @@ A flow chart was created using Lucidchart to explain the game flow and logic:
 
 The logo has been created with ASCII art, using the website [Patorjk](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20). It appears at the top of the game and remains there throughout the course of the game. 
 
+![Logo](images/logo.PNG)
+
 ### Welcome message
 
 To maintain simplicity, the welcome message displays "Let's play Hangman!"
+
+![Welcome Message](images/welcome-message.PNG)
 
 ### Game area
 
@@ -82,19 +85,33 @@ The movie title is represented with empty underscores / dashes. These will be up
 
 The player is prompted to guess a letter, which is displayed under the prompt. 
 
+![Game Area](images/game-area.PNG)
+
 ### Game messages
 
 As the game progresses, the welcome message is updated with the following messages:
 
+![Correct Guess](images/correct-guess.PNG)
+
 When the player guesses a correct letter:           "Well done! The letter (guessed letter) is in the movie!"
+
+![Incorrect Guess](images/incorrect-guess.PNG)
 
 When the player guesses an incorrect letter:        "The letter (guessed letter) is not in this movie!"
 
+![Already Guessed](images/already-guessed.PNG)
+
 When the player enters a letter already guessed:    "You already guessed the letter (guessed letter)  guess another letter!"
+
+![Game Won](images/game-won.PNG)
 
 When the player guesses the movie:  "Congratulations! You guessed the correct movie!"
 
+![Game Lost](images/game-lost.PNG)
+
 When the player loses the game: "You lost the game! The movie was (movie title)!
+
+![Invalid Guess](images/invalid-guess.PNG)
 
 When the player enters an invalid guess:    "Invalid guess, please enter one letter from A to Z only!
 
@@ -114,7 +131,7 @@ If the player enters an invalid response, the following message is displayed: "I
 
 ***
 
-## Technologies USed
+## Technologies Used
 
 - Python
 - [Python Checker:](https://www.pythonchecker.com/) Checking code for Python requirements.
@@ -199,8 +216,6 @@ Follow the steps below to enable automatic deployment to Heroku from Gitpod:
 ### Credit
 
 Brian Macharia - I would like to thank my mentor Brian Macharia for his valuable feedback and suggestions. His guidance enabled me to plan and execute the project. 
-
-Friends and family - I would like to thank my friends and family who provided me valueable feedback during testing. 
 
 #### Media
 
