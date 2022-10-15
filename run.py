@@ -24,7 +24,7 @@ def play_game(movie):
     function to play game
 
     Arg:
-    - movie (str) : random movie choosen from the random_movie function
+    - movie (str) : random movie chosen from the random_movie function
 
     set initial variables and values
     display underscores for number of letters in movie
@@ -38,7 +38,7 @@ def play_game(movie):
                     if valid - check if letter is in movie
                     if invalid - ask player to input only one letter A-Z
                 check if letter has already been guessed
-                    if aleady guessed - ask player to guess a different letter
+                    if already guessed - ask player to guess a different letter
 
             Game play:
                 check if guessed letter is in movie name
@@ -71,7 +71,7 @@ def play_game(movie):
 
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print(f"You have aleady guessed the letter {guess},\n\nplease guess a different letter!")
+                print(f"You already guessed {guess}, guess another letter!")
                 print("\n")
                 print(' '.join(display))
 
@@ -82,7 +82,6 @@ def play_game(movie):
                 guessed_letters += guess
                 print(' '.join(display))
                 print("\n")
-            
             else:
                 for position in range(movie_length):
                     letter = movie[position]
@@ -111,7 +110,7 @@ def play_game(movie):
 
 def restart_game():
     """
-    funtion to restart game
+    function to restart game
 
     ask player is they want to play again
         if yes - while loop to start game, continues until player enters N
@@ -129,7 +128,7 @@ def restart_game():
             print("\n")
             sys.exit()
         else:
-            print("Invalid input ...Please enter Y to play again or N to exit")
+            print("Invalid input ... enter Y to play again or N to exit")
             print("\n")
 
 
