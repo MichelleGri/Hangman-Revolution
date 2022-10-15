@@ -49,7 +49,7 @@ def play_game(movie):
                     if number of lives is 0 - game is lost
     """
     print(LOGO)
-    print("  Let's play Hangman!")
+    print("  Let's play Hangman!\U0001F929")
     player_lives = 6
     print(stages[player_lives])
     game_over = False

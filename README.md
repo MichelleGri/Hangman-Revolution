@@ -179,18 +179,18 @@ The project has been deployed to Heroku: [The Hangman Revolution](https://hangma
 ### Enable automatic deployment to Heroku
 Follow the steps below to enable automatic deployment to Heroku from Gitpod:
 
-Open the terminal.
-command: heroku login -i
-Enter your credentials - email and password
-Get your app name from heroku.
-command: heroku apps
-Set the heroku remote. (Replace <app_name> with your actual app name and remove the <> characters)
-command: heroku git:remote -a <app_name>
-Add and commit any changes to your code if applicable
-command: git add . && git commit -m "Deploy to Heroku via CLI"
-Push to both GitHub and Heroku
-command: git push origin main
-command: git push heroku main
+- Open the terminal
+- command: heroku login -i
+- Enter your credentials - email and password
+- Get your app name from heroku
+- command: heroku apps
+- Set the heroku remote. (Replace <app_name> with your actual app name and remove the <> characters)
+- command: heroku git:remote -a <app_name>
+- Add and commit any changes to your code if applicable
+- command: git add . && git commit -m "Deploy to Heroku via CLI"
+- Push to both GitHub and Heroku
+- command: git push origin main
+- command: git push heroku main
 
 ***
 
