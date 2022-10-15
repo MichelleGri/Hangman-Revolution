@@ -1,31 +1,210 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman Revolution
 
-Welcome MichelleGri,
+[View the live project here](https://hangman-revolution.herokuapp.com/)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[GitHub Repo](https://github.com/MichelleGri/hangman-revolution)
 
-## Reminders
+The Hangman Revolution is the classic hangman game based on movie titles. The game aims to create an engaging and entertaining environment for the player to enjoy themselves. It is coded with Python and is played on terminal on Heroku. The game asks the player to enter letters from A to Z and try to guess the movie title. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+The target audience for this game are people from 18 years and over who have an interest in movies and playing simple and classic games. It challenges and tests the players' knowledge of movie titles. 
 
-## Creating the Heroku app
+***
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Index - Table of Contents
 
-1. `heroku/python`
-2. `heroku/nodejs`
+* [User Experience (UX)](#user-experience)
+* [Flow Chart](#flow-chart)
+* [Designs](#designs)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Known Bugs](#known-bugs)
+* [Acknowledgements](#credit)
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+***
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## User Experience (UX)
 
-Connect your GitHub repository and deploy as normal.
+### User Stories
 
-## Constraints
+#### Reasons to play the game
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* A user looking for a simple and classic game to play.
+* A user wanting to play a game based on movie titles.
+* A user looking for entertainment and enjoyment.
 
------
-Happy coding!
+#### Aims of the game
+
+* Provide an entertaining and engaging game for players
+
+***
+
+## Scope
+
+#### User expectations
+* Being able to easily navigate through the game
+* Being able to easily understand how to play the game
+* Have an entertaining experience
+
+#### As a developer / business, I want to provide
+* A simple and easy to play game with all game functionality working as expected
+* Simple and easy to follow instructions
+* Entertain and engage the player
+
+***
+
+## Flow Chart
+
+A flow chart was created using Lucidchart to explain the game flow and logic:
+
+![Flow Chart](images/hangman-flowchart.PNG)
+
+***
+
+## Features
+
+### Logo
+
+The logo has been created with ASCII art, using the website [Patorjk](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20). It appears at the top of the game and remains there throughout the course of the game. 
+
+### Welcome message
+
+To maintain simplicity, the welcome message displays "Let's play Hangman!"
+
+### Game area
+
+The game area includes a drawing of hangman with ASCII art, which will be updated as the player loses lives. 
+
+The movie title is represented with empty underscores / dashes. These will be updated as the player guesses correct letters corresponding to their position in the movie title. 
+
+The player is prompted to guess a letter, which is displayed under the prompt. 
+
+### Game messages
+
+As the game progresses, the welcome message is updated with the following messages:
+
+When the player guesses a correct letter:           "Well done! The letter (guessed letter) is in the movie!"
+
+When the player guesses an incorrect letter:        "The letter (guessed letter) is not in this movie!"
+
+When the player enters a letter already guessed:    "You already guessed the letter (guessed letter)  guess another letter!"
+
+When the player guesses the movie:  "Congratulations! You guessed the correct movie!"
+
+When the player loses the game: "You lost the game! The movie was (movie title)!
+
+When the player enters an invalid guess:    "Invalid guess, please enter one letter from A to Z only!
+
+### Result
+
+The game ends once the player guesses the correct movie title, and the game is won.
+
+The game ends if the player enters 6 incorrect guesses, and the game is lost.
+
+The player is asked if they would like to play again with displaying the following message: "Do you want to play again? Y/N:"
+
+If the player enters "Y", the game restarts with a different random movie.
+
+If the player enters "N", the following message is displayed: "Thank you for playing Hangman Revolution!"
+
+If the player enters an invalid response, the following message is displayed: "Invalid input ... enter Y to play again or N to exit"
+
+***
+
+## Technologies USed
+
+- Python
+- [Python Checker:](https://www.pythonchecker.com/) Checking code for Python requirements.
+- [Lucidchart:](https://www.lucidchart.com/pages/) To create the game flow chart.
+- [Git](https://git-scm.com/) Gitpod is used to write code, make commits, and push code to GitHub.
+- [GitHub:](https://github.com/) GitHub is used to create a project repository. 
+- [Heroku:](https://dashboard.heroku.com/) Used to deploy the project.
+
+***
+
+## Testing
+
+### Python Checker Code Validator
+
+[Python Checker](https://www.pythonchecker.com/) was used to check the validity of the code. The code passed the validator with 99%. The image below displays the result:
+
+![Python Checker](images/python-checker.PNG)
+
+### Further Testing
+
+#### Testing by game developer:
+
+- Game area display is as expected with all elements appearing where and when expected.
+- The game follows a logical flow with all functionality working as and when expected.
+- The game messages are displayed clearly and appear according to game logic. 
+- Underscore blanks appear corresponding to a random chosen movie.
+- Underscore blanks are updated with correct letters when player enters a correct guess.
+- Hangman is updated with correct drawings when player enters an incorrect guess.
+- Game ends when the player wins or loses the game.
+- Player is asked if they would like to play again when game ends.
+
+#### Bugs
+
+Currently, there are no known bugs within the game.
+
+***
+
+## Deployment
+
+The project has been deployed to Heroku: [The Hangman Revolution](https://hangman-revolution.herokuapp.com/).
+
+1. Sign-up for a free account on Heruko.
+2. Login to Heroku.
+3. Click on "Create new app".
+4. Enter an app/project name and choose a region.
+5. Click on "Create app".
+6. Navigate to 'Settings' tab.
+7. Click on "Reveal Config Vars".
+8. Add Config Var in Heroku's Settings - Key: PORT, Value: 8000.
+9. Scroll to "Buildpacks".
+10. Click on "Add Buildpack".
+11. First add "Python", click on 'Save'.
+12. Second add "Nodejs", click 'Save'.
+    (Ensure 'Python' is before (first) 'Nodejs' (second) - drag and rearrange if required)
+
+***
+
+## Acknowledgements
+
+### Credit
+
+Brian Macharia - I would like to thank my mentor Brian Macharia for his valuable feedback and suggestions. His guidance enabled me to plan and execute the project. 
+
+Friends and family - I would like to thank my friends and family who provided me valueable feedback during testing. 
+
+#### Media
+
+[Dr. Angela Yu](https://www.udemy.com/course/100-days-of-code/) – Udemy Course - 100 Days of Code: The Complete Python Pro Bootcamp for 2022 – for providing valuable videos on various Python topics
+
+[Programming with Mosh](https://www.youtube.com/c/programmingwithmosh) – YouTube Channel – for providing informative videos on various Python topics
+
+[Lucidchart:](https://www.lucidchart.com/pages/) - used to create game flow chart
+
+[Stack Overflow](https://stackoverflow.com/) – for trouble shooting and resolving code issues
+
+[W3school](https://www.w3schools.com/) – for Python coding information and trouble shooting
+
+[Python Checker](https://www.pythonchecker.com/) - for checking Python code validity
+
+[Patorjk](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) - for creating logo ASCII art
+
+[Chris Horton](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) - GitHub - for hangman ASCII art
+
+***
+
+### Content
+
+Code and Content (not already attributed): Michelle Griffiths
+
+
+
+
+
+
+
