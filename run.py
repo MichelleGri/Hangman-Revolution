@@ -7,9 +7,9 @@ from hangman_logo import logo
 
 def random_movie():
     """
-    function to choose a random movie from list
+    function to choose a random movie from movies_list
 
-    display underscores for number of letters in movie
+    Returns: random movie in all uppercase letters
     """
     movie = random.choice(movies_list)
     return movie.upper()
@@ -18,7 +18,31 @@ def random_movie():
 def play_game(movie):
     """
     function to play game
-    ask player to guess a letter
+
+    Arg:
+    - movie (str) : random movie choosen from the random_movie function
+
+    set initial variables and values
+    display underscores for number of letters in movie
+
+    create while loop to run while player is guessing letters:
+
+        ask player to guess a letter
+
+            Validation:
+                check if input is valid - an alphabet
+                    if valid - check if letter is in movie
+                    if invalid - ask player to input only one letter A-Z
+                check if letter has already been guessed
+                    if aleady guessed - ask player to guess a different letter
+
+            Game play:
+                check if guessed letter is in movie name
+                    if yes - replace underscore with guessed letter
+                    if no - guess is wrong, decrease lives, draw hangman
+                check if game over
+                    if there are no more underscores in display - game is won
+                    if number of lives is 0 - game is lost
     """
     print(logo)
     print("Let's play Hangman!")
@@ -76,17 +100,11 @@ def play_game(movie):
             print(stages[player_lives])
 
         else:
-            print("Invalid guess, please enter letters from A-Z only!")
+            print("Invalid guess, please enter one letter from A-Z only!")
             print("\n")
 
 
-def main():
-    """
-    main function to set initial values
-    """
-    movie = random_movie()
-    play_game(movie)
-
+def restart_game():
     play_again = input(f"Do you want to play again? Y/N:\n").upper().strip()
     print("\n")
     while play_again == "Y":
@@ -94,6 +112,15 @@ def main():
     if play_again == "N":
         print("Thank you for playing!")
         sys.exit()
+
+
+def main():
+    """
+    main function to start the game
+    """
+    movie = random_movie()
+    play_game(movie)
+    restart_game()
 
 
 main()
