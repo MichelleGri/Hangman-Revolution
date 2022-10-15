@@ -79,7 +79,7 @@ def play_game(movie):
             elif guess not in movie:
                 print("/n")
                 print(LOGO)
-                print(f"  The letter {guess} is not in this movie!")
+                print(f"  The letter {guess} is not in this movie!\U0001F60A")
                 print("\n")
                 player_lives -= 1
                 guessed_letters += guess
@@ -91,7 +91,7 @@ def play_game(movie):
                         display[position] = letter
                 print("\n")
                 print(LOGO)
-                print(f"  Well done! The letter {guess} is in the movie!")
+                print(f"  Well done! The letter {guess} is in the movie!\U0001F389")
                 print("\n")
                 print(' '.join(display))
                 guessed_letters += guess
@@ -99,14 +99,14 @@ def play_game(movie):
                 if "_" not in display:
                     game_over = True
                     print(LOGO)
-                    print("  Congratulations! You guessed the correct movie!")
+                    print("  Congratulations! You guessed the correct movie!\U0001F3C6")
                     print("\n")
                     print(f"  {movie}")
                     print("\n")
             if player_lives == 0:
                 game_over = True
                 print(LOGO)
-                print(f"  You lost the game!\n\n  The movie was {movie}!")
+                print(f"  You lost the game!\U0001F4A5\n\n  The movie was {movie}!")
                 print("\n")
             print(stages[player_lives])
 
