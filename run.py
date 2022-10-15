@@ -1,3 +1,7 @@
+"""
+module and file imports
+"""
+
 import random
 import sys
 from hangman_movies import movies_list
@@ -70,7 +74,7 @@ def play_game(movie):
                 print(f"You have aleady guessed the letter {guess},\n\nplease guess a different letter!")
                 print("\n")
                 print(' '.join(display))
-        
+
             elif guess not in movie:
                 print(f"The letter {guess} is not in this movie!")
                 print("\n")
@@ -94,16 +98,14 @@ def play_game(movie):
                     game_over = True
                     print("Congratulations! You guessed the correct movie!")
                     print("\n")
-        
             if player_lives == 0:
                 game_over = True
                 print(f"You lost the game!\n\nThe movie was {movie}!")
                 print("\n")
-            
             print(stages[player_lives])
 
         else:
-            print("Invalid guess, please enter one letter from A-Z only!")
+            print("Invalid guess, please enter one letter from A to Z only!")
             print("\n")
 
 
@@ -120,7 +122,6 @@ def restart_game():
     while game_over:
         play_again = input("Do you want to play again? Y/N:\n").upper().strip()
         print("\n")
-        
         while play_again == "Y":
             main()
         if play_again == "N":
