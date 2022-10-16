@@ -39,6 +39,12 @@ The target audience for this game are people from 18 years and over who have an 
 
 * Provide an entertaining and engaging game for players
 
+### Responsiveness
+
+The image below illustrates the game application's responsiveness on different screen sizes. 
+
+![Hangman Responsiveness](images/responsiveness.PNG)
+
 ***
 
 ## Scope
@@ -70,6 +76,10 @@ A flow chart was created using Lucidchart to explain the game flow and logic:
 The logo has been created with ASCII art, using the website [Patorjk](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20). It appears at the top of the game and remains there throughout the course of the game. 
 
 ![Logo](images/logo.PNG)
+
+### Emojis
+
+Several emojis have been included to add playfulness and fun in the game. These appear next to the game messages.
 
 ### Welcome message
 
@@ -140,6 +150,7 @@ If the player enters an invalid response, the following message is displayed: "I
 ## Technologies Used
 
 - Python
+- [Am I Responsive:](http://ami.responsivedesign.is) Checking responsive of the game on different secreen sizes.
 - [Python Checker:](https://www.pythonchecker.com/) Checking code for Python requirements.
 - [Lucidchart:](https://www.lucidchart.com/pages/) To create the game flow chart.
 - [Git](https://git-scm.com/) Gitpod is used to write code, make commits, and push code to GitHub.
@@ -215,6 +226,17 @@ Follow the steps below to enable automatic deployment to Heroku from Gitpod:
 - command: git push origin main
 - command: git push heroku main
 
+### Adding and Committing files in GitPod
+
+To add files to the repository:
+Type ‘git add .’ in the command line
+Type ‘git commit -m “This is the commit message” 
+Type ‘git push’
+
+The git commit message should clearly describe the changes made. 
+
+Pushing will send all work to the GitHub repository.
+
 ***
 
 ## Acknowledgements
@@ -229,7 +251,9 @@ Brian Macharia - I would like to thank my mentor Brian Macharia for his valuable
 
 [Programming with Mosh](https://www.youtube.com/c/programmingwithmosh) – YouTube Channel – for providing informative videos on various Python topics
 
-[Lucidchart:](https://www.lucidchart.com/pages/) - used to create game flow chart
+[Lucidchart](https://www.lucidchart.com/pages/) - used to create game flow chart
+
+[Am I Responsive](http://ami.responsivedesign.is) - checking responsive of the game on different secreen sizes.
 
 [Stack Overflow](https://stackoverflow.com/) – for trouble shooting and resolving code issues
 
