@@ -83,7 +83,7 @@ Several emojis have been included to add playfulness and fun in the game. These 
 
 ### Welcome message
 
-To maintain simplicity, the welcome message displays "Let's play Hangman!"
+To maintain simplicity, the welcome message displays "Let's play Hangman!" "Guess the movie!"
 
 ![Welcome Message](images/welcome-message.PNG)
 
